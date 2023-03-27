@@ -36,3 +36,53 @@ I interested to learn a new technologies and improving my skills. I've been work
 - Testing:
   - Jest
   - Storybook
+
+
+### The code example
+[Task (codewars.com): ](https://www.codewars.com/kata/52742f58faf5485cae000b9a/javascript)
+
+
+Need to write a function which formats a duration, given as a number of seconds, in a human-friendly way.
+For example: For seconds = 3662, function should return "1 hour, 1 minute and 2 seconds"
+
+
+Solution:
+```
+function formatDuration (time) {
+  if (time === 0) {
+    return 'now'
+  }
+  const formats = [['second', 60],['minute', 60],['hour', 24],['day', 365],['year', Infinity]];
+  const res = []
+  
+  for (let [type, qty] of formats) {
+    const value = time % qty
+    time = (time - value) / qty;
+  
+    if (value === 0) continue;
+    res.push(`${value} ${type}${value !== 1 ? 's' : ''}`)
+    
+    if (time === 0) break;
+  }
+  
+  return res.reverse().join(', ').replace(/, (?!.+,)/, ' and ');
+}
+```
+
+## My projects:
+
+- Movie search (SPA with auth, which allow you to find interesting movie and save it to your collection):
+  - Stack: React.js, CSS3, HTML5
+  - Code: https://github.com/ns-mamaev/movies-explorer-frontend
+
+- Simple web-store (in progress):
+  - Stack: TypeScript, React.js, SCSS, Redux Toolkit
+  - Code: https://github.com/ns-mamaev/react-bikes
+
+## Courses:
+- Web Developer: Yandex Practicum in 2022;
+- JS / FRONT-END: RS School (2023 - now);
+
+## Languages:
+- English A2
+- Russian Native
